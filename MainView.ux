@@ -1,0 +1,31 @@
+<App>
+
+<iOS.StatusBarConfig IsVisible="False" ></iOS.StatusBarConfig>
+<Android.StatusBarConfig IsVisible="False"></Android.StatusBarConfig>
+
+    <DockPanel>
+        <Video ux:Name="video" StretchMode="UniformToFill"  Url="http://bit.ly/2r3XNcY">
+            <ProgressAnimation>
+                <Change progress.Width="100"></Change>
+            </ProgressAnimation> 
+        </Video>
+        <Grid Dock="Bottom" ColumnCount="2" RowCount="1">
+            <Button Text="Play">
+                <Clicked>
+                    <Play Target="video"></Play>
+                </Clicked>
+            </Button>
+                <Button Text="Pause">
+                <Clicked>
+                    <Pause Target="video"></Pause>
+                </Clicked>
+            </Button>
+        </Grid>
+                <Rectangle ux:Name="progress" Fill="Purple" Width="0%" Height="10" Dock="Bottom"></Rectangle>
+    </DockPanel>
+
+    <WhileWindowPortrait>
+        <Change video.StretchMode="Uniform"></Change>
+    </WhileWindowPortrait>
+
+</App>
